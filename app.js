@@ -17,11 +17,17 @@ function agregarAmigo() {
         }
         amigos.push(mayusculas);
         console.log(`Amigo agregado: ${mayusculas}`);
-        console.log(`Lista de amigos:`, amigos);
+        //console.log(`Lista de amigos:`, amigos);
         //console.log(amigos.length);
     }
     //Limpia el input
     document.getElementById('amigo').value = '';
 }
 
-
+function actualizaLista(){
+    let listaDeAmigos = document.getElementById('listaAmigos');
+    listaDeAmigos.innerHTML = '';
+    return;
+  
+    
+}  
