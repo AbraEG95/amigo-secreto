@@ -27,6 +27,8 @@ function agregarAmigo(){
     
     // Muestra la lista
     mostrarAmigos();
+
+    //sortearAmigo();
 }
 
 // Función para limpiar el input
@@ -49,5 +51,22 @@ function mostrarAmigos() {
         // Agregamos el <li> a la lista <ul>
         lista.appendChild(li);
     });
+}
+
+function sortearAmigo(){
+    
+    let indice = Math.floor(Math.random () * amigos.length);
+    let ganador = '';
+        if (amigos == '') {
+            alert('No tiene participantes');
+        }else{
+            ganador += amigos[indice];
+        }console.log(`el ganador es ${ganador}`);
+
+    let nombreGanador = document.getElementById('resultado');
+    nombreGanador.innerHTML = ganador;
+    let li = document.createElement('li');
+    li.textContent = ganador;
+    nombreGanador.textContent = ganador;   
 }
 
