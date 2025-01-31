@@ -27,8 +27,6 @@ function agregarAmigo(){
     
     // Muestra la lista
     mostrarAmigos();
-
-    //sortearAmigo();
 }
 
 // Función para limpiar el input
@@ -54,7 +52,7 @@ function mostrarAmigos() {
 }
 
 function sortearAmigo(){
-    
+    limpiarLista();
     let indice = Math.floor(Math.random () * amigos.length);
     let ganador = '';
         if (amigos == '') {
@@ -67,6 +65,11 @@ function sortearAmigo(){
     nombreGanador.innerHTML = ganador;
     let li = document.createElement('li');
     li.textContent = ganador;
-    nombreGanador.textContent = ganador;   
+    nombreGanador.textContent = `El amigo ganador es: !${ganador}¡`;  
+    
 }
 
+function limpiarLista(){
+    let limpia = document.getElementById('listaAmigos');
+    limpia.innerHTML = '';
+}
