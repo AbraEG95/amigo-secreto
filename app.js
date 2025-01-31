@@ -1,29 +1,53 @@
 /*El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. 
 Aquí deberás desarrollar la lógica para resolver el problema.*/
 
-let amigos = [];
+let amigos = []; // Array para almacenar los amigos
 
 function agregarAmigo(){
-    nombre = document.getElementById('amigo').value;
-    mayusculas = nombre.toUpperCase();
+    nombre = document.getElementById('amigo').value; // Obtiene el nombre del input
+    mayusculas = nombre.toUpperCase(); // Convierte el nombre a mayúsculas
     console.log(`Añadiste ${mayusculas}`);
-        //Valida si tiene datos
+
+        // Valida si el campo de nombre está vacío
         if (nombre === '') {
             alert('Por favor, inserte un nombre.');
         }
-        //Valida si esta repetido
-        else if (amigos == mayusculas) {
+        // Valida si el nombre ya está en el array
+        else if (amigos.includes(mayusculas)) {
             alert('Ese nombre ya se encuentra.')
         }
-        //Inserta el dato
+        // Si no está vacío ni repetido, lo agrega al array
         else {
             amigos.push(mayusculas);
         }
-        console.log(`Se tu array tiene ${amigos}`);
-    //limpia el input
-    limpiarCaja();    
+        console.log(`Tu array tiene ${amigos}`);
+
+    // Limpia el input
+    limpiarCaja(); 
+    
+    // Muestra la lista
+    mostrarAmigos();
 }
 
+// Función para limpiar el input
 function limpiarCaja(){
     document.getElementById('amigo').value = '';
 }
+
+function mostrarAmigos() {
+    // Accedemos al <ul> con el id 'listaAmigos'
+    let lista = document.getElementById('listaAmigos');
+    // Limpiamos el contenido actual de la lista
+    lista.innerHTML = '';
+
+    // Recorremos el array de amigos
+    amigos.forEach(amigo => {
+        // Creamos un nuevo <li> para cada amigo
+        let li = document.createElement('li');
+        // Asignamos el nombre del amigo al contenido del <li>
+        li.textContent = amigo;
+        // Agregamos el <li> a la lista <ul>
+        lista.appendChild(li);
+    });
+}
+
