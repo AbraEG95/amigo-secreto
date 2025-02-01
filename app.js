@@ -57,6 +57,7 @@ function sortearAmigo(){
     let ganador = '';
         if (amigos == '') {
             alert('No tiene participantes');
+            return;
         }else{
             ganador += amigos[indice];
         }console.log(`el ganador es ${ganador}`);
