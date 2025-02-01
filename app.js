@@ -61,13 +61,13 @@ function sortearAmigo(){
         }else{
             ganador += amigos[indice];
         }
-        //console.log(`el ganador es ${ganador}`);
+        console.log(`el ganador es ${ganador}`);
 
     let nombreGanador = document.getElementById('resultado');
     nombreGanador.innerHTML = ganador;
     let li = document.createElement('li');
     li.textContent = ganador;
-    nombreGanador.textContent = `El amigo ganador es: !${ganador}¡`;  
+    nombreGanador.textContent = `El amigo ganador es: !${ganador}¡`; 
     
 }
 
@@ -76,6 +76,12 @@ function limpiarLista(){
     limpia.innerHTML = '';
 }
 
+function reiniciarJuego(){
+    limpiarLista();
+    limpiarCaja();
+    //agregarAmigo();
+}
+reiniciarJuego();
 //Pendientes de mejoras
     //Reiniciar el juego
     //Agregar con enter
