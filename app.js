@@ -6,7 +6,7 @@ let amigos = []; // Array para almacenar los amigos
 function agregarAmigo(){
     nombre = document.getElementById('amigo').value; // Obtiene el nombre del input
     mayusculas = nombre.toUpperCase(); // Convierte el nombre a mayúsculas
-    console.log(`Añadiste ${mayusculas}`);
+    //console.log(`Añadiste ${mayusculas}`);
 
         // Valida si el campo de nombre está vacío
         if (nombre === '') {
@@ -20,7 +20,7 @@ function agregarAmigo(){
         else {
             amigos.push(mayusculas);
         }
-        console.log(`Tu array tiene ${amigos}`);
+        //console.log(`Tu array tiene ${amigos}`);
 
     // Limpia el input
     limpiarCaja(); 
@@ -60,7 +60,8 @@ function sortearAmigo(){
             return;
         }else{
             ganador += amigos[indice];
-        }console.log(`el ganador es ${ganador}`);
+        }
+        //console.log(`el ganador es ${ganador}`);
 
     let nombreGanador = document.getElementById('resultado');
     nombreGanador.innerHTML = ganador;
@@ -75,4 +76,6 @@ function limpiarLista(){
     limpia.innerHTML = '';
 }
 
-//desarrollo
+//Pendientes de mejoras
+    //Reiniciar el juego
+    //Agregar con enter
