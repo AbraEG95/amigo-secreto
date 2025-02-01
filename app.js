@@ -74,3 +74,5 @@ function limpiarLista(){
     let limpia = document.getElementById('listaAmigos');
     limpia.innerHTML = '';
 }
+
+//desarrollo
